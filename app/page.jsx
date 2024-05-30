@@ -37,6 +37,18 @@ const page = () => {
         }
       }
     })
+    gsap.from(".spec", {
+      y: "20px",
+      opacity: 0,
+      // rotateX: "90deg",
+      duration: 0.4,
+      ease: 'power1.inOut',
+      stagger: 0.3,
+      scrollTrigger:{
+        trigger: "#section1",
+        start: "60% bottom"
+      }
+    })
     gsap.to(model.current, {
       scrollTrigger: {
         scrub: true,
@@ -70,7 +82,7 @@ const page = () => {
   }, {scope: "main"})
 
   return (
-    <main className="min-h-screen bg-zinc-800">
+    <main className="min-h-screen bg-zinc-900 bg-[url('/bg.svg')]">
       <Banner/>
       <Canvas 
         id="canvas" 
@@ -2281,28 +2293,46 @@ const page = () => {
         </group>
       </Canvas>
 
-      <section id="section1" className="min-h-screen bg-zinc-800 grid grid-cols-5 place-content-center">
-        <div className="col-start-4 col-span-2 font-bold grid gap-6">
-          <h2 className="text-5xl bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text text-transparent">Feel the power</h2>
-          <div className="flex items-center gap-3">
-            <svg className="border-red-800 border-2 rounded-full p-1.5" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 640 512"><path fill="#991b1b" d="M64 464V316.9c0-108.4 68.3-205.1 170.5-241.3l169.7-60.1c21.4-7.6 43.8 8.3 43.8 30.9c0 11-5.5 21.2-14.6 27.3L400 96c48.1 0 91.2 29.8 108.1 74.9l48.6 129.5c11.8 31.4 4.1 66.8-19.6 90.5c-16 16-37.8 25.1-60.5 25.1h-3.4c-26.1 0-50.9-11.6-67.6-31.7l-32.3-38.7c-11.7 4.1-24.2 6.4-37.3 6.4h-.1c-6.3 0-12.5-.5-18.6-1.5c-3.6-.6-7.2-1.4-10.7-2.3c-28.9-7.8-53.1-26.8-67.8-52.2c-4.4-7.6-14.2-10.3-21.9-5.8s-10.3 14.2-5.8 21.9c24 41.5 68.3 70 119.3 71.9l47.2 70.8c4 6.1 6.2 13.2 6.2 20.4c0 20.3-16.5 36.8-36.8 36.8H112c-26.5 0-48-21.5-48-48m328-240a24 24 0 1 0 0-48a24 24 0 1 0 0 48"/></svg>
-            <p className="text-3xl text-zinc-400 font-bold ">517HP, 465Nm</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg className="border-red-800 border-2 rounded-full p-1" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 20 20"><path fill="#991b1b" d="M11 4a6 6 0 1 1-3.3 11.012V15h-.018A6 6 0 0 1 11 4M5.255 14q.377.54.846 1H1.5a.5.5 0 0 0 0 1h5.892a7 7 0 1 0 0-12H2.5a.5.5 0 0 0 0 1h3.601A6.98 6.98 0 0 0 4 10c0 1.074.242 2.09.674 3H3.5a.5.5 0 0 0 0 1zm2.942-6.096A3.5 3.5 0 0 0 7.5 10c0 .786.26 1.512.697 2.096l1.08-1.08A2 2 0 0 1 9 10c0-.37.101-.718.277-1.016zm.707-.707l1.08 1.08A2 2 0 0 1 11 8c.37 0 .718.101 1.016.277l1.08-1.08A3.5 3.5 0 0 0 11 6.5c-.786 0-1.512.26-2.096.697m4.9.707l-1.08 1.08a2 2 0 0 1-.001 2.032l1.08 1.08c.438-.584.697-1.31.697-2.096s-.26-1.512-.697-2.096m-.708 4.9l-1.08-1.08A2 2 0 0 1 11 12c-.37 0-.718-.101-1.016-.277l-1.08 1.08c.584.438 1.31.697 2.096.697s1.512-.26 2.096-.697M6.5 10a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0m3.5 0a1 1 0 1 0 2 0a1 1 0 0 0-2 0"/></svg>
-            <p className="text-3xl text-zinc-400 font-bold">0-100 in 3.2s</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg className="border-red-800 border-2 rounded-full p-2" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 16 16"><path fill="#991b1b" fill-rule="evenodd" d="M13.545 2.1a.75.75 0 0 1 .274 1.025l-3.472 6.007a3 3 0 1 1-1.208-.908l1.759-3.042a6.5 6.5 0 0 0-2.148-.639V5a.75.75 0 1 1-1.5 0v-.457a6.5 6.5 0 0 0-1.829.49l.229.396a.75.75 0 1 1-1.3.75l-.228-.396a6.5 6.5 0 0 0-1.339 1.34l.396.227a.75.75 0 0 1-.75 1.3l-.396-.229a6.5 6.5 0 0 0-.498 1.905a.75.75 0 0 1-1.492-.155A8 8 0 0 1 11.65 3.88l.87-1.506a.75.75 0 0 1 1.025-.274m-.107 4.047a.75.75 0 0 1 1.047.169a8 8 0 0 1 1.51 4.963a.75.75 0 1 1-1.499-.052a6.5 6.5 0 0 0-1.227-4.033a.75.75 0 0 1 .17-1.047ZM9.5 11a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0" clip-rule="evenodd"/></svg>
-            <p className="text-3xl text-zinc-400 font-bold">296km/h max</p>
+      <section id="section1" className="min-h-screen  grid grid-cols-5 place-content-center relative">
+        {/* <img src="/swirl2.svg" alt="swirl graphic" className="absolute top-1/2 left-2/3 -translate-y-1/2 w-[100px] h-[100px]" /> */}
+        <div className="col-start-4 col-span-2 font-bold max-w-lg w-fit relative bg-zinc-800 rounded-3xl shadow-md spec">
+          <h2 className="text-4xl text-zinc-200 p-10 from-red-600 to-red-900 bg-blend-overlay bg-[url('/dots.svg'),_theme('backgroundImage.gradient-to-br')] rounded-[inherit]">Feel the power</h2>
+          <div className="text-3xl text-zinc-500 p-8 grid gap-3">
+            <p className="spec"><span className="bg-gradient-to-b from-zinc-100 to-zinc-500 text-transparent bg-clip-text">3996ml</span> of pure freedom</p>
+            <p className="spec"><span className="bg-gradient-to-b from-zinc-100 to-zinc-500 text-transparent bg-clip-text">517</span> horses under the hood</p>
+            <p className="spec">0-100km/h in <span className="bg-gradient-to-b from-zinc-100 to-zinc-500 text-transparent bg-clip-text">3.2s</span></p>
+            <p className="spec">Max speed of <span className="bg-gradient-to-b from-zinc-100 to-zinc-500 text-transparent bg-clip-text">296km/h</span></p>
+            <p className="spec">Just <span className="bg-gradient-to-b from-zinc-100 to-zinc-500 text-transparent bg-clip-text">1450kg</span> of weight</p>
           </div>
         </div>
       </section>
+
       <section id="section2" className="min-h-screen relative">
         <div className="h-2/3 w-full bg-[url('/wavy.svg')] absolute bottom-0 left-0 origin-bottom skew-y-[20deg]"></div>
+        <div className="absolute text-xl text-zinc-400 bg-zinc-800 bg-[url('/carbon.svg')] rounded-3xl px-6 py-8 z-20 spec shadow-xl shadow-[hsl(0,76%,5%)] top-32 left-32">
+          <h3 className="text-zinc-300 font-bold">Rear-mounted engine</h3>
+          for imporved acceleration and traction
+        </div>
+        <div className="absolute text-xl text-zinc-400 bg-zinc-800 bg-[url('/carbon.svg')] rounded-3xl px-6 py-8 z-20 spec shadow-xl shadow-[hsl(0,76%,5%)] top-32 left-1/2">
+          <h3 className="text-zinc-300 font-bold">Carbon Fiber Everywhere</h3>
+          to reduce as much weight as possible
+        </div>
+        <div className="absolute text-xl text-zinc-400 bg-zinc-800 bg-[url('/carbon.svg')] rounded-3xl px-6 py-8 z-20 spec shadow-xl shadow-[hsl(0,76%,5%)] bottom-16 left-1/4">
+          <h3 className="text-zinc-300 font-bold">Ceramic Composite Brakes</h3>
+          for great control in extreme situations
+        </div>
       </section>
-      <section id="section3" className="min-h-screen bg-zinc-800">
 
+
+      <section id="section3" className="min-h-screen relative">
+        <div className="absolute text-xl text-zinc-400 bg-zinc-800 bg-[url('/carbon.svg')] rounded-3xl px-6 py-8 z-20 spec shadow-xl shadow-[hsl(0,76%,5%)] top-48 right-32">
+          <h3 className="text-zinc-300 font-bold">Adjustable Wing</h3>
+          860kg of downforce at 285km/h
+        </div>
+        <div className="absolute text-xl text-zinc-400 bg-zinc-800 bg-[url('/carbon.svg')] rounded-3xl px-6 py-8 z-20 spec shadow-xl shadow-[hsl(0,76%,5%)] bottom-48 right-32">
+          <h3 className="text-zinc-300 font-bold">Titanium Exhaust</h3>
+          wake up your neighbours 
+        </div>
       </section>
     </main>
   )
