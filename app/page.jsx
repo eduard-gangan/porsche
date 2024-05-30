@@ -2338,6 +2338,6 @@ const page = () => {
   )
 }
 
-useGLTF.preload('/scene.gltf')
+// useGLTF.preload('/scene.gltf')
 
 export default page
