@@ -11,7 +11,7 @@ import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 
 const page = () => {
-  const { nodes, materials } = useGLTF('/models/scene.gltf')
+  const { nodes, materials } = useGLTF('/scene.gltf')
 
   const model = useRef()
   const controls = useRef()
@@ -2338,6 +2338,6 @@ const page = () => {
   )
 }
 
-useGLTF.preload('/models/scene.gltf')
+useGLTF.preload('/scene.gltf')
 
 export default page
