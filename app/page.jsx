@@ -1,7 +1,8 @@
 "use client"
 
 import Banner from "@/components/Banner"
-import { Canvas } from "@react-three/fiber"
+import { Canvas, useLoader } from "@react-three/fiber"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls, PerspectiveCamera, useGLTF  } from "@react-three/drei"
 import { Suspense, useRef, useState } from "react"
 import Lights from "@/components/Lights"
@@ -11,7 +12,7 @@ import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 
 const page = () => {
-  const { nodes, materials } = useGLTF('./scene.gltf')
+  const { nodes, materials } = useLoader(GLTFLoader, '/scene.gltf')
 
   const model = useRef()
   const controls = useRef()
