@@ -15,7 +15,7 @@ const page = () => {
   
 
   const model = useRef()
-  const controls = useRef()
+  const main = useRef()
 
   const [rotation, setrotation] = useState([Math.PI/18, -Math.PI/3.5, 0])
   const [position, setposition] = useState([5, -2, -15])
@@ -80,10 +80,10 @@ const page = () => {
         }
       }
     })
-  }, {scope: "main"})
+  }, {scope: main})
 
   return (
-    <main className="min-h-screen bg-zinc-900 bg-[url('/bg.svg')]">
+    <main ref={main} className="min-h-screen bg-zinc-900 bg-[url('/bg.svg')]">
       <Banner/>
       <Canvas 
         id="canvas" 
