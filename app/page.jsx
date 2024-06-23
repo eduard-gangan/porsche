@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 import Model from "@/components/Model"
 import Fullscreen from "@/components/Fullscreen"
+import Landscape from "@/components/Landscape"
 
 const page = () => {
   const model = useRef()
@@ -82,8 +83,9 @@ const page = () => {
   }, {scope: main})
 
   return (
-    <main ref={main} className="min-h-screen bg-zinc-900 bg-[url('/bg.svg')]">
+    <main ref={main} className="min-h-screen bg-zinc-900 bg-[url('/bg.svg')] overflow-x-hidden">
       <Fullscreen/>
+      <Landscape/>
       <Banner/>
       <Canvas 
         id="canvas" 
