@@ -7,7 +7,6 @@ const SmoothScroller = ({children, ...props}) => {
         duration: 1,
         lerp: 0.1,
         smoothTouch: true,
-        syncTouch: true,
         touchInertiaMultiplier: 15,
       }}>
         {children}

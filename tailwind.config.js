@@ -17,7 +17,8 @@ module.exports = {
         'screen': '100svh',
         'screen+': '100lvh',
         'screen/2': '50vh',
-        'banner': 'calc(100svh + 150px)'
+        'banner': 'calc(100svh + 150px)',
+        
       },
       backgroundSize: {
         '200%': '200%'
@@ -51,6 +52,12 @@ module.exports = {
       },
       fontFamily:{
         'porsche': ['var(--font-porsche)'],
+      },
+      screens: {
+        'xsh': {'raw': '(min-height: 400px)'},
+        'smh': {'raw': '(min-height: 640px)'},
+        'mdh': {'raw': '(min-height: 768px)'},
+        'lgh': {'raw': '(min-height: 1024px)'},        
       }
     },
   },
